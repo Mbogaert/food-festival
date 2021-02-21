@@ -4,10 +4,15 @@ const webpack = require("webpack");
 
 // create a main configuration object
 module.exports = {
-    entry: './assets/js/script.js',
+    entry: {
+      app: './assets/js/script.js',
+      events: './assets/js/events.js',
+      schedule: './assets/js/events.js',
+      tickets: './assets/js/tickets.js'
+    },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'main.bundle.js'
+        path: __dirname + '/dist',
+        filename: '[name].bundle.js'
     },
     plugins: [
         new webpack.ProvidePlugin({
